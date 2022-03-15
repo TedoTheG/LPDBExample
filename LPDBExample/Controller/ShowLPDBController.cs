@@ -15,6 +15,22 @@ namespace LPDBExample.Controller
             {
                 return ex.EloTables.ToList();
             }
+            
+        }
+        public void CreateRank(EloTable eloTable)
+        {
+            using (LPDBEntities db = new LPDBEntities())
+            {
+                var lastRank = db.EloTables.ToList().LastOrDefault();
+                if (lastRank == null)
+                {
+                    lastRank = new EloTable();
+                    lastRank.Id = 0;
+                }
+                eloTable.Id = lastRank.Id + 1;
+                db.EloTables.Add(eloTable);
+                db.SaveChanges();
+            }
         }
     }
 }

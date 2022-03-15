@@ -31,6 +31,9 @@ namespace LPDBExample.View
         {
             this.components = new System.ComponentModel.Container();
             this.dgvRanks = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.rankName = new System.Windows.Forms.TextBox();
+            this.rankPrice = new System.Windows.Forms.TextBox();
             this.rankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -46,12 +49,36 @@ namespace LPDBExample.View
             this.rankDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dgvRanks.DataSource = this.bindingSource1;
-            this.dgvRanks.Location = new System.Drawing.Point(212, 340);
+            this.dgvRanks.Location = new System.Drawing.Point(605, 12);
             this.dgvRanks.Name = "dgvRanks";
             this.dgvRanks.RowHeadersWidth = 51;
             this.dgvRanks.RowTemplate.Height = 24;
-            this.dgvRanks.Size = new System.Drawing.Size(352, 157);
+            this.dgvRanks.Size = new System.Drawing.Size(310, 245);
             this.dgvRanks.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(793, 386);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(122, 50);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Add Rank";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // rankName
+            // 
+            this.rankName.Location = new System.Drawing.Point(646, 386);
+            this.rankName.Name = "rankName";
+            this.rankName.Size = new System.Drawing.Size(141, 22);
+            this.rankName.TabIndex = 3;
+            // 
+            // rankPrice
+            // 
+            this.rankPrice.Location = new System.Drawing.Point(646, 414);
+            this.rankPrice.Name = "rankPrice";
+            this.rankPrice.Size = new System.Drawing.Size(141, 22);
+            this.rankPrice.TabIndex = 4;
             // 
             // rankDataGridViewTextBoxColumn
             // 
@@ -81,6 +108,9 @@ namespace LPDBExample.View
             this.BackgroundImage = global::LPDBExample.Properties.Resources.LoL;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(927, 509);
+            this.Controls.Add(this.rankPrice);
+            this.Controls.Add(this.rankName);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvRanks);
             this.Name = "RankListView";
             this.Text = "RankListView";
@@ -88,6 +118,7 @@ namespace LPDBExample.View
             ((System.ComponentModel.ISupportInitialize)(this.dgvRanks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +128,8 @@ namespace LPDBExample.View
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn rankDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox rankName;
+        private System.Windows.Forms.TextBox rankPrice;
     }
 }
