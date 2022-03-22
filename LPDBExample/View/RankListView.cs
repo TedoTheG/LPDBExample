@@ -1,4 +1,5 @@
 ﻿using LPDBExample.Controller;
+using LPDBExample.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,5 +30,17 @@ namespace LPDBExample.View
 
         }
 
+        private void RefreshTable() 
+        {
+            dgvRanks.DataSource = showLPDBController.GetAll();        
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            EloTable eloTable = new EloTable();
+            eloTable.Rank = rankName.Text;
+            eloTable.Price = int.Parse(rankPrice.Text);
+            showLPDBController.CreateRank(eloTable);
+            RefreshTable();
+        }
     }
 }

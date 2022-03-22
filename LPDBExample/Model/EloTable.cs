@@ -16,6 +16,6 @@ namespace LPDBExample.Model
     {
         public int Id { get; set; }
         public string Rank { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
     }
 }
